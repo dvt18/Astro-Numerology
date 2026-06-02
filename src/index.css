@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #060611;
+  --bg-stars: #03030a;
+  --primary: 138, 43, 226; /* Purple: rgb(138, 43, 226) */
+  --secondary: 75, 0, 130; /* Indigo: rgb(75, 0, 130) */
+  --accent: 212, 175, 55;   /* Sacred Gold: rgb(212, 175, 55) */
+  --gold-light: 255, 223, 128;
+  --text-light: 245, 245, 250;
+  --text-muted: 160, 160, 190;
+  --card-bg: rgba(12, 12, 28, 0.45);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --font-mystic: 'Cinzel', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: rgb(var(--text-light));
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Twinkling Star Background Overlay */
+.stars-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 160px 120px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 210px 220px, rgba(255,223,128,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 240px 310px, #fff, rgba(0,0,0,0));
+  background-size: 320px 320px;
+  opacity: 0.35;
+  animation: twinkling 120s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.nebula-overlay-1 {
+  position: fixed;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(75, 0, 130, 0) 70%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.nebula-overlay-2 {
+  position: fixed;
+  bottom: -15%;
+  left: -10%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(138, 43, 226, 0) 70%);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes twinkling {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 500px; }
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(138, 43, 226, 0.15);
+}
+
+.glass-card.gold-border-hover:hover {
+  border-color: rgba(var(--accent), 0.4);
+  box-shadow: 0 12px 40px 0 rgba(var(--accent), 0.1);
+}
+
+/* Mystical Typography and Effects */
+.mystic-title {
+  font-family: var(--font-mystic);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgb(var(--text-light));
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, rgb(var(--accent)) 0%, rgb(var(--gold-light)) 50%, rgb(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.violet-gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #d8b4fe 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Inputs and Forms */
+.mystic-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(8, 8, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.mystic-input:focus {
+  outline: none;
+  border-color: rgba(138, 43, 226, 0.7);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+  background: rgba(8, 8, 20, 0.85);
+}
+
+.mystic-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d4af37'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+/* Button Stylings */
+.btn-primary {
+  position: relative;
+  background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(75, 0, 130) 100%);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(138, 43, 226, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-gold {
+  position: relative;
+  background: linear-gradient(135deg, rgb(var(--accent)) 0%, #b8860b 100%);
+  color: #060611;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, rgb(255, 223, 128) 0%, rgb(var(--accent)) 100%);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation for spiritual details */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Horizontal scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060611;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 43, 226, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 43, 226, 0.6);
+}
