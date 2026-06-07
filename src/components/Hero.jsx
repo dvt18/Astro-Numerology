@@ -5,16 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      style={{
-        minHeight: '100vh',
-        padding: '160px 24px 80px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        zIndex: 10,
-        overflow: 'hidden',
-      }}
+      className="hero-section"
     >
       <div
         style={{
@@ -23,7 +14,7 @@ export default function Hero() {
           width: '100%',
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gap: '48px',
+          gap: '32px',
           alignItems: 'center',
         }}
         className="hero-grid"
@@ -64,7 +55,7 @@ export default function Hero() {
           {/* Main Title */}
           <h1
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontSize: 'clamp(1.7rem, 4.5vw, 3.2rem)',
               lineHeight: 1.15,
               fontWeight: 900,
               marginBottom: '20px',
@@ -116,20 +107,12 @@ export default function Hero() {
             justifyContent: 'center',
             alignItems: 'center',
             position: 'relative',
+            width: '100%',
           }}
           className="hero-visual"
         >
           {/* Rotating Sacred Geometry */}
-          <div
-            style={{
-              position: 'relative',
-              width: 'clamp(280px, 40vw, 450px)',
-              height: 'clamp(280px, 40vw, 450px)',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
+          <div className="hero-visual-wrapper">
             {/* Spinning Glow Ring 1 */}
             <div
               style={{

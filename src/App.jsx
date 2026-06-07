@@ -29,14 +29,7 @@ export default function App() {
       <Hero />
 
       {/* Universal Cosmic Language Quote Divider */}
-      <div style={{
-        padding: '60px 24px',
-        textAlign: 'center',
-        position: 'relative',
-        zIndex: 10,
-        maxWidth: '850px',
-        margin: '0 auto'
-      }} className="fade-in">
+      <div className="quote-container fade-in">
         <div style={{
           width: '60px',
           height: '1px',

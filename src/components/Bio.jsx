@@ -23,25 +23,17 @@ export default function Bio() {
   return (
     <section
       id="about"
-      style={{
-        padding: '100px 24px',
-        position: 'relative',
-        zIndex: 10,
-        maxWidth: '1200px',
-        margin: '0 auto',
-      }}
+      className="section-container"
     >
       <div
-        className="glass-card"
+        className="glass-card bio-grid responsive-padding-48"
         style={{
-          padding: '48px',
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gap: '48px',
+          gap: 'clamp(24px, 4vw, 48px)',
           alignItems: 'center',
           boxShadow: '0 15px 50px rgba(0, 0, 0, 0.4)',
         }}
-        className="bio-grid"
       >
         {/* Left Column: Premium Portrait */}
         <div
@@ -73,7 +65,7 @@ export default function Bio() {
             zIndex: 2,
             aspectRatio: '3/4',
             width: '100%',
-            maxWidth: '380px',
+            maxWidth: '330px',
             boxShadow: '0 20px 40px rgba(0,0,0,0.6)'
           }}>
             <img
@@ -96,51 +88,43 @@ export default function Bio() {
               left: 0,
               width: '100%',
               background: 'linear-gradient(to top, rgba(6,6,17,0.95) 0%, rgba(6,6,17,0.5) 80%, rgba(6,6,17,0) 100%)',
-              padding: '24px',
+              padding: '20px',
               textAlign: 'center'
             }}>
-              <span style={{ fontFamily: 'var(--font-mystic)', color: '#fff', fontSize: '1.25rem', letterSpacing: '0.08rem', display: 'block' }}>ARIA STERLING</span>
-              <span style={{ fontSize: '0.8rem', color: 'rgb(212, 175, 55)', fontWeight: 600, letterSpacing: '0.05rem', textTransform: 'uppercase' }}>FOUNDER & COSMIC GUIDE</span>
+              <span style={{ fontFamily: 'var(--font-mystic)', color: '#fff', fontSize: '1.15rem', letterSpacing: '0.08rem', display: 'block' }}>ARIA STERLING</span>
+              <span style={{ fontSize: '0.75rem', color: 'rgb(212, 175, 55)', fontWeight: 600, letterSpacing: '0.05rem', textTransform: 'uppercase' }}>FOUNDER & COSMIC GUIDE</span>
             </div>
           </div>
         </div>
 
         {/* Right Column: Copy & Experience */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div>
-            <span style={{ color: 'rgb(var(--accent))', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>The Practitioner</span>
-            <h2 className="mystic-title" style={{ fontSize: '2.2rem', marginTop: '8px', marginBottom: '16px' }}>
+            <span style={{ color: 'rgb(var(--accent))', fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>The Practitioner</span>
+            <h2 className="mystic-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', marginTop: '8px', marginBottom: '14px', lineHeight: '1.25' }}>
               The Guardian of <br />
               <span className="gold-gradient-text">Personal Frequencies</span>
             </h2>
-            <p style={{ color: 'rgb(var(--text-muted))', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '16px' }}>
+            <p style={{ color: 'rgb(var(--text-muted))', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '12px' }}>
               Over the past 14 years, Aria has mapped out structural numerology readings for creative minds and executives. Combining the mathematics of Pythagorean reductions with classical astrology elements, she helps clarify energetic alignments, auspicious time windows, and vocational paths.
             </p>
-            <p style={{ color: 'rgb(var(--text-muted))', fontSize: '0.95rem', lineHeight: '1.7' }}>
+            <p style={{ color: 'rgb(var(--text-muted))', fontSize: '0.9rem', lineHeight: '1.6' }}>
               Instead of fortune-telling, Aria uses calculations to uncover personal patterns, mapping how numbers like address coordinates or legal name structures can trigger smooth, friction-free business expansion.
             </p>
           </div>
 
           {/* Quick Metrics */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '16px',
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
-            padding: '20px 0',
-            textAlign: 'center'
-          }}>
+          <div className="metrics-grid">
             <div>
-              <span style={{ display: 'block', fontSize: '1.6rem', fontWeight: 900, color: 'rgb(212, 175, 55)' }}>14+</span>
+              <span className="metric-number" style={{ color: 'rgb(212, 175, 55)' }}>14+</span>
               <span style={{ fontSize: '0.75rem', color: 'rgb(var(--text-muted))', fontWeight: 500 }}>Years Experience</span>
             </div>
             <div>
-              <span style={{ display: 'block', fontSize: '1.6rem', fontWeight: 900, color: 'rgb(var(--text-light))' }}>4,500+</span>
+              <span className="metric-number" style={{ color: 'rgb(var(--text-light))' }}>4,500+</span>
               <span style={{ fontSize: '0.75rem', color: 'rgb(var(--text-muted))', fontWeight: 500 }}>Clients Aligned</span>
             </div>
             <div>
-              <span style={{ display: 'block', fontSize: '1.6rem', fontWeight: 900, color: '#10b981' }}>99%</span>
+              <span className="metric-number" style={{ color: '#10b981' }}>99%</span>
               <span style={{ fontSize: '0.75rem', color: 'rgb(var(--text-muted))', fontWeight: 500 }}>Success Rate</span>
             </div>
           </div>

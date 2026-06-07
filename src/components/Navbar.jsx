@@ -59,12 +59,12 @@ export default function Navbar() {
             textDecoration: 'none',
             fontFamily: 'var(--font-mystic)',
             fontWeight: 700,
-            fontSize: '1.4rem',
+            fontSize: 'clamp(1.1rem, 4.5vw, 1.4rem)',
             letterSpacing: '0.1em',
           }}
           className="gold-gradient-text"
         >
-          <Sparkles size={24} style={{ color: 'rgb(212, 175, 55)' }} />
+          <Sparkles size={20} style={{ color: 'rgb(212, 175, 55)', flexShrink: 0 }} />
           ARIA STERLING
         </a>
 

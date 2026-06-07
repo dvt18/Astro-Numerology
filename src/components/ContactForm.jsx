@@ -83,39 +83,36 @@ export default function ContactForm({ prefilledData }) {
   return (
     <section
       id="contact"
+      className="section-container"
       style={{
-        padding: '100px 24px',
-        position: 'relative',
-        zIndex: 10,
-        maxWidth: '900px',
-        margin: '0 auto',
+        maxWidth: '760px',
       }}
     >
-      <div className="glass-card" style={{ padding: '48px', boxShadow: '0 20px 50px rgba(0, 0, 0, 0.45)' }}>
+      <div className="glass-card responsive-padding-36" style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.45)' }}>
         
         {/* SUCCESS STATE DISPLAY */}
         {success ? (
-          <div style={{ textAlign: 'center', padding: '40px 0' }} className="fade-in">
-            <div style={{ display: 'inline-flex', justifyContent: 'center', marginBottom: '24px' }}>
+          <div style={{ textAlign: 'center', padding: '32px 0' }} className="fade-in">
+            <div style={{ display: 'inline-flex', justifyContent: 'center', marginBottom: '20px' }}>
               <div style={{
-                width: '80px',
-                height: '80px',
+                width: '70px',
+                height: '70px',
                 borderRadius: '50%',
                 background: 'rgba(212, 175, 55, 0.1)',
                 border: '3px solid rgb(212, 175, 55)',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                boxShadow: '0 0 30px rgba(212, 175, 55, 0.3)'
+                boxShadow: '0 0 20px rgba(212, 175, 55, 0.25)'
               }}>
-                <CheckCircle2 size={40} style={{ color: 'rgb(212, 175, 55)' }} />
+                <CheckCircle2 size={36} style={{ color: 'rgb(212, 175, 55)' }} />
               </div>
             </div>
 
-            <span style={{ color: 'rgb(var(--accent))', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
+            <span style={{ color: 'rgb(var(--accent))', fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
               Transmission Successful
             </span>
-            <h2 className="mystic-title" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', marginBottom: '20px' }}>
+            <h2 className="mystic-title" style={{ fontSize: '1.5rem', marginBottom: '16px', letterSpacing: '0.08em' }}>
               Blueprint <span className="gold-gradient-text">Received</span>
             </h2>
             
@@ -123,33 +120,33 @@ export default function ContactForm({ prefilledData }) {
               background: 'rgba(255,255,255,0.02)',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '16px',
-              padding: '24px',
+              padding: '20px',
               maxWidth: '650px',
-              margin: '0 auto 32px',
-              lineHeight: '1.7',
-              fontSize: '0.95rem',
+              margin: '0 auto 24px',
+              lineHeight: '1.6',
+              fontSize: '0.9rem',
               color: 'rgb(var(--text-muted))'
             }}>
-              <p style={{ marginBottom: '12px', color: '#fff', fontWeight: 500 }}>
+              <p style={{ marginBottom: '10px', color: '#fff', fontWeight: 500 }}>
                 Greetings, {name}. Your calculations and situation details have been securely logged.
               </p>
               Your numeric blueprint has been successfully shared. Aria will study your unique birth chart numbers and contact you at <strong style={{ color: 'rgb(var(--accent))' }}>{email}</strong> or <strong style={{ color: 'rgb(var(--accent))' }}>{mobile}</strong> within 24 hours to schedule your live reading session.
             </div>
 
-            <button onClick={handleReset} className="btn-secondary" style={{ display: 'inline-flex', gap: '10px' }}>
-              <RefreshCw size={16} />
+            <button onClick={handleReset} className="btn-secondary" style={{ display: 'inline-flex', gap: '10px', padding: '10px 22px', fontSize: '0.85rem' }}>
+              <RefreshCw size={14} />
               Submit Another Inquiry
             </button>
           </div>
         ) : (
           /* ACTIVE FORM DISPLAY */
           <div>
-            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-              <span style={{ color: 'rgb(var(--accent))', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Let's Work Together</span>
-              <h2 className="mystic-title" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', marginTop: '8px', marginBottom: '16px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+              <span style={{ color: 'rgb(var(--accent))', fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Let's Work Together</span>
+              <h2 className="section-title">
                 Book a <span className="gold-gradient-text">Personal Session</span>
               </h2>
-              <p style={{ color: 'rgb(var(--text-muted))', maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem', lineHeight: '1.6' }}>
+              <p style={{ color: 'rgb(var(--text-muted))', maxWidth: '550px', margin: '0 auto', fontSize: '0.9rem', lineHeight: '1.55' }}>
                 Submit your birth details below, and Aria will reach out directly to schedule your personal live alignment session.
               </p>
             </div>
